@@ -34,7 +34,7 @@ def make_json_response(data, status_code=200):
 
 
 @app.route("/add_word", methods=['POST'])
-def add_word():
+async def add_word():
     """
         添加一个单词
     """
@@ -44,7 +44,7 @@ def add_word():
 
 
 @app.route("/delete_word", methods=['DELETE'])
-def delete_word():
+async def delete_word():
     """
         删除一个单词
     """
@@ -55,7 +55,7 @@ def delete_word():
 
 
 @app.route("/get_wordbook")
-def get_wordbook():
+async def get_wordbook():
     """
         获得单词本
     """
@@ -63,7 +63,7 @@ def get_wordbook():
 
 
 @app.route("/generate_sentences", methods=['POST'])
-def generate_sentences():
+async def generate_sentences():
     """
         生成句子
     """
@@ -77,7 +77,7 @@ def generate_sentences():
 
 
 @app.route("/.well-known/logo.png")
-def plugin_logo():
+async def plugin_logo():
     """
         注册用的：返回插件的logo，要求48 x 48大小的png文件.
         注意：API路由是固定的，事先约定的。
@@ -86,7 +86,7 @@ def plugin_logo():
 
 
 @app.route("/.well-known/ai-plugin.json")
-def plugin_manifest():
+async def plugin_manifest():
     """
         注册用的：返回插件的描述文件，描述了插件是什么等信息。
         注意：API路由是固定的，事先约定的。
@@ -98,7 +98,7 @@ def plugin_manifest():
 
 
 @app.route("/.well-known/openapi.yaml")
-def openapi_spec():
+async def openapi_spec():
     """
         注册用的：返回插件所依赖的插件服务的API接口描述，参照openapi规范编写。
         注意：API路由是固定的，事先约定的。
