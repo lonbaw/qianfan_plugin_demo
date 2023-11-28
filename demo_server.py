@@ -77,7 +77,7 @@ def generate_sentences():
 
 
 @app.route("/.well-known/logo.png")
-async def plugin_logo():
+def plugin_logo():
     """
         注册用的：返回插件的logo，要求48 x 48大小的png文件.
         注意：API路由是固定的，事先约定的。
@@ -86,7 +86,7 @@ async def plugin_logo():
 
 
 @app.route("/.well-known/ai-plugin.json")
-async def plugin_manifest():
+def plugin_manifest():
     """
         注册用的：返回插件的描述文件，描述了插件是什么等信息。
         注意：API路由是固定的，事先约定的。
@@ -98,7 +98,7 @@ async def plugin_manifest():
 
 
 @app.route("/.well-known/openapi.yaml")
-async def openapi_spec():
+def openapi_spec():
     """
         注册用的：返回插件所依赖的插件服务的API接口描述，参照openapi规范编写。
         注意：API路由是固定的，事先约定的。
